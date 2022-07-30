@@ -1,5 +1,14 @@
 from django.http import JsonResponse
+import json
 
 
-def api_home(req, *args, **kwargs):
-    return JsonResponse({'message': 'A Django API response in JSON format'})
+def api_home(request, *args, **kwargs):
+    body = request.body
+    data= {}
+    try:
+        data = json.loads(body)
+    except:
+        pass
+    
+    print(data.keys())
+    return JsonResponse(data)

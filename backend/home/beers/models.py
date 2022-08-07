@@ -7,9 +7,11 @@ class Beer(models.Model):
     description = models.TextField(max_length=250)
     price = models.DecimalField(max_digits=15, decimal_places=2, default=44.44)
 
-
     @property
     def sale_price(self):
         return '%.2f' %(float(self.price) * 0.8)
+
+    def __str__(self):
+        return f'Name: {self.name}'
 
      

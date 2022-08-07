@@ -1,6 +1,6 @@
 import requests
 
-endpoint = "http://127.0.0.1:3000/api/beers/3/"
+endpoint = "http://127.0.0.1:3000/api/beers/1"
 
 
 response = requests.get(endpoint)
